@@ -1,20 +1,21 @@
 public class MemoryConsistencyErrorExample {
+
     private static boolean sayHello = false;
 
     public static void main(String[] args) throws InterruptedException {
 
         Thread thread = new Thread(() -> {
-           while(!sayHello) {
+            while (!sayHello) {
 
-           }
+            }
 
-           System.out.println("Hello World!");
+            System.out.println("Hello World!");
 
-           while(sayHello) {
+            while (sayHello) {
 
-           }
+            }
 
-           System.out.println("Good Bye!");
+            System.out.println("Good Bye!");
         });
 
         thread.start();

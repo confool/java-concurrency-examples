@@ -16,7 +16,7 @@ public class FutureCancelExample {
         long startTime = System.nanoTime();
         Future<String> future = executorService.submit(callable);
 
-        while(!future.isDone()) {
+        while (!future.isDone()) {
             System.out.println("Task is still not done...");
             Thread.sleep(200);
             double elapsedTimeInSec = (System.nanoTime() - startTime) / 1000000000.0;
@@ -28,7 +28,7 @@ public class FutureCancelExample {
         }
 
         // Check if future is cancelled before retrieving the result
-        if(!future.isCancelled()) {
+        if (!future.isCancelled()) {
             System.out.println("Task completed! Retrieving the result");
             // Future.get() blocks until the result is available
             String result = future.get();

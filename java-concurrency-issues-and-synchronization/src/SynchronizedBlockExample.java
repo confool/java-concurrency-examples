@@ -21,11 +21,12 @@ class FineGrainedSynchronizedCounter {
 }
 
 public class SynchronizedBlockExample {
+
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         FineGrainedSynchronizedCounter counter = new FineGrainedSynchronizedCounter();
 
-        for(int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             executorService.submit(() -> counter.increment());
         }
 

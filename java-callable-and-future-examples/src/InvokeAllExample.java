@@ -28,11 +28,11 @@ public class InvokeAllExample {
 
         List<Future<String>> futures = executorService.invokeAll(taskList);
 
-        for(Future<String> future: futures) {
+        for (Future<String> future : futures) {
             // The result is printed only after all the futures are complete. (i.e. after 5 seconds)
             System.out.println(future.get());
         }
 
-	executorService.shutdown();
+        executorService.shutdown();
     }
 }

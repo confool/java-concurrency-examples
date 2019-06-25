@@ -10,7 +10,7 @@ class SynchronizedCounter {
 
     // Synchronized Method
     public synchronized void increment() {
-	System.out.println(Thread.currentThread().getName());
+        System.out.println(Thread.currentThread().getName());
         count = count + 1;
     }
 
@@ -25,7 +25,7 @@ public class SynchronizedMethodExample {
 
         SynchronizedCounter synchronizedCounter = new SynchronizedCounter();
 
-        for(int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             executorService.submit(() -> synchronizedCounter.increment());
         }
 
