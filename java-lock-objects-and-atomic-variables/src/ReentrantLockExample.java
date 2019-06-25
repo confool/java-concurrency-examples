@@ -37,7 +37,7 @@ public class ReentrantLockExample {
 
         executorService.submit(() -> counter.increment());
 
-        for(int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             executorService.submit(() -> counter.increment());
         }
 

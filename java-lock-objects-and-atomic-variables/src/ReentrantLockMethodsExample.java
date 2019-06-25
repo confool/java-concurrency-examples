@@ -24,7 +24,7 @@ class ReentrantLockMethodsCounter {
             throw new IllegalStateException(e);
         }
 
-        if(isAcquired) {
+        if (isAcquired) {
             try {
                 Thread.sleep(2000);
                 count = count + 1;
@@ -46,8 +46,8 @@ public class ReentrantLockMethodsExample {
         ReentrantLockMethodsCounter lockMethodsCounter = new ReentrantLockMethodsCounter();
 
         executorService.submit(() -> {
-           System.out.println("IncrementCount (First Thread) : " +
-                   lockMethodsCounter.incrementAndGet() + "\n");
+            System.out.println("IncrementCount (First Thread) : " +
+                    lockMethodsCounter.incrementAndGet() + "\n");
         });
 
         executorService.submit(() -> {

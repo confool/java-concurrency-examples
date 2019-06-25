@@ -13,7 +13,6 @@ class ReadWriteCounter {
 
     public int incrementAndGetCount() {
         lock.writeLock().lock();
-
         try {
             count = count + 1;
             return count;
@@ -40,8 +39,8 @@ public class ReadWriteLockExample {
         ReadWriteCounter counter = new ReadWriteCounter();
 
         Runnable readTask = () -> {
-          System.out.println(Thread.currentThread().getName() +
-                  " Read Task : " + counter.getCount());
+            System.out.println(Thread.currentThread().getName() +
+                    " Read Task : " + counter.getCount());
         };
 
         Runnable writeTask = () -> {
